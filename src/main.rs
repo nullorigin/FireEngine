@@ -9,12 +9,13 @@ struct info {
 fn get_info() -> info {
     info {
         version: String::from("0.1.0"),
-        name: String::from("Firewall"),
-        about: String::from("Firewall is a program written in Rust that generates a firewall configuration parsed from a set of specified logfiles."),
-        intro: String::from("Welcome to Firewall!"),
+        name: String::from("FireEngine"),
+        about: String::from("FireEngine is written in Rust. \nThis program generates a firewall configuration parsed from a set of specified logfiles."),
+        intro: String::from("Welcome to FireEngine!"),
     }
 }
 fn main() {
     println!("{}", get_info().intro);
     println!("{}", get_info().about);
+    println!();
 }
