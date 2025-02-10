@@ -1,7 +1,10 @@
 [package]
-name = "FireEngine"
+name = "fireengine"
 version = "0.1.0"
 edition = "2021"
 target = "x86_64-unknown-linux-gnu"
+license = "MIT"
+description = "This program generates a firewall configuration based on a set of specified logfiles."
+repository = "https://github.com/nullorigin/FireEngine"
 
 [dependencies]

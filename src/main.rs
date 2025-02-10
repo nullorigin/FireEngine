@@ -10,7 +10,7 @@ fn get_info() -> info {
     info {
         version: String::from("0.1.0"),
         name: String::from("FireEngine"),
-        about: String::from("FireEngine is written in Rust. \nThis program generates a firewall configuration parsed from a set of specified logfiles."),
+        about: String::from("FireEngine is written in Rust. \nThis program generates a firewall configuration based on a set of specified logfiles."),
         intro: String::from("Welcome to FireEngine!"),
     }
 }
