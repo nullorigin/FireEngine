@@ -1,13 +1,13 @@
 #[derive(Debug, Clone)]
-struct info {
+struct ProgramInfo {
     version: String,
     name: String,
     about: String,
     intro: String,
 }
 
-fn get_info() -> info {
-    info {
+fn get_program_info() -> ProgramInfo {
+    ProgramInfo {
         version: String::from("0.1.0"),
         name: String::from("FireEngine"),
         about: String::from("FireEngine is written in Rust. \nThis program generates a firewall configuration based on a set of specified logfiles."),
@@ -15,7 +15,7 @@ fn get_info() -> info {
     }
 }
 fn main() {
-    println!("{}", get_info().intro);
-    println!("{}", get_info().about);
+    println!("{}", get_program_info().intro);
+    println!("{}", get_program_info().about);
     println!();
 }
