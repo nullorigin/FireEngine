@@ -1,6 +1,5 @@
 use fireengine::base::{Config, FireEngine};
 
-
 #[derive(Debug, Clone)]
 struct CargoToml {
     name: String,
@@ -19,7 +18,9 @@ fn get_cargo_toml() -> CargoToml {
         edition: String::from("2021"),
         target: String::from("x86_64-unknown-linux-gnu"),
         license: String::from("MIT"),
-        description: String::from("This program generates a firewall configuration based on a set of specified logfiles."),
+        description: String::from(
+            "FireEngine generates a firewall configuration based on a set of specified logfiles.",
+        ),
         repository: String::from("https://github.com/nullorigin/FireEngine"),
     }
 }
@@ -38,9 +39,18 @@ fn print_cargo_toml() {
 pub(crate) mod fireengine;
 fn main() {
     print_cargo_toml();
-    let mut fe = FireEngine::default();
+    let mut fe = FireEngine::new();
     println!();
-    fe.configure(Config::new());
-    fe.enable();
+    fe.daemon.debug_on();
+    fe.daemon.config();
+    fe.daemon.enable();
+    fe.daemon.load();
+    fe.daemon.start();
+    fe.daemon.stop();
+    fe.daemon.unload();
+    fe.daemon.deconfig();
+    fe.daemon.disable();
+    fe.daemon.fail();
+    fe.daemon.success();
     println!();
 }
